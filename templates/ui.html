@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordPress Importer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .preview-image {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Layouts and Provide WordPress URL</h1>
+
+        <!-- Layout Table -->
+        <form method="POST" action="/import" id="importForm">
+            <label for="wordpress_url">Enter your WordPress URL:</label>
+            <input type="text" name="wordpress_url" class="form-input" placeholder="https://your-wordpress-site.com" required>
+
+            <label for="username">Enter WordPress Login Username:</label>
+            <input type="text" name="username" class="form-input" placeholder="Enter WP login username" required>
+
+            <label for="app_password">Enter App Password:</label>
+            <input type="password" name="app_password" class="form-input" placeholder="Enter app password" required>
+
+            <button type="submit">Import Selected Layouts</button>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Select XML File</th>
+                        <th>XML File Name</th>
+                        <th>Image Preview</th>
+                        <th>Select CSS File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in layout_data %}
+                    <tr>
+                        <td><input type="checkbox" name="selected_xml_files" value="{{ row['xml_file_name'] }}"></td>
+                        <td>{{ row['xml_file_name'] }}</td>
+                        <td><img src="{{ row['image_preview_url'] }}" alt="Preview" class="preview-image"></td>
+                        <td><input type="checkbox" name="selected_css_files" value="{{ row['css_file_name'] }}"></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

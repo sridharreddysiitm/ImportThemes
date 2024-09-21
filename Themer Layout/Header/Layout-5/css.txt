@@ -1,0 +1,53 @@
+/* max 768*/
+
+#h-col1{width:27% !important;	}
+#h-col2{width:73% !important;	}
+#h-col2-1{ width: 39% !important;}	
+#h-col2-2{ width: 46% !important;}	
+#h-col2-3{ width: 14% !important;}
+	
+	
+.fl-col-group .fl-col:not(.fl-col-small-custom-width) {
+    flex-basis: auto;
+}
+
+/* 480 */
+
+#h-btn .pp-button-wrap {
+    text-align: left ;
+}
+	
+#h-info .uabb-info-list-content-wrapper.uabb-info-list-left .uabb-info-list-icon {
+    margin-right: 10px;
+}
+	
+#h-col1{width:100% !important;	}
+#h-col2{width:100% !important;	}
+#h-col2-1{ width: 100% !important;}	
+#h-col2-2{ width: 100% !important;
+	order:3;}	
+#h-col2-3{ width: 100% !important;
+	order:2;}
+#h-col2-4{ width: 100% !important;}
+	
+#h-icon .pp-social-icons {
+    justify-content: right;
+	margin-top: -85px;
+}	
+
+#h-menu.fl-module > .fl-module-content {
+	margin-top: -50px;}
+#h-info .uabb-info-list .uabb-info-list-left{
+		text-align: right;
+	margin-top: -128px;
+	}
+	
+	#h-info{
+		position:relative;
+		z-index:2;
+	}
+	
+#h-icon{
+		position:relative;
+		z-index:3;
+	}

@@ -1,0 +1,121 @@
+/* HTML */
+
+<div class="post-main-box">
+    <div class="pp-content-grid-post-text">
+            
+            <h3 class="pp-content-grid-post-title">[wpbb post:link text="title"]</h3>
+            <div class="pp-content-grid-post-meta">
+            	<!--[wpbb post:date format="F j, Y"]-->
+        		<span class="pp-content-grid-post-meta-sep"> </span>
+        		[wpbb post:terms_list taxonomy="category" separator=", "]
+            </div>
+    </div>
+    
+    <div class="post-front-side">
+        
+        [wpbb-if post:featured_image]
+        <div class="pp-content-grid-post-image">
+        	[wpbb post:featured_image size="large" display="tag" linked="yes"]
+        </div>
+        [/wpbb-if]
+       <div class="pp-content-grid-post-text pp-content-grid-post-more-link">
+        	<a href="[wpbb post:url]">Read More <span class="fas fa-arrow-right"></span> </a>
+    </div>
+    </div>
+    <div class="post-overlay">   
+        <div class="pp-content-grid-post-excerpt">
+            	[wpbb post:excerpt length="50" more="..."]
+        </div>
+        <div class="pp-content-grid-post-more-link">
+        	<a href="[wpbb post:url]">Read More <span class="fas fa-arrow-right"></span> </a>
+        </div>
+    </div>	
+   
+    
+</div>  
+
+
+
+/* CSS */
+.pp-content-grid-post {
+    font-size: 14px;
+}
+.pp-content-grid-post-image {
+    padding: 0px;
+    padding-bottom: 0;
+}
+.pp-content-grid-post-text {
+    padding: 20px;
+}
+.pp-content-grid-post-title {
+    font-size: 20px;
+	line-height: 26px;
+	margin: 0;
+	padding: 0px;
+}
+.pp-content-grid-post-meta {
+    padding: 0;
+}
+.pp-content-grid-post-meta a {
+    text-decoration: none;
+}
+.pp-content-grid-post-meta,
+.pp-content-grid-post-meta a {
+    color: #888;
+    font-size: 12px;
+}
+.pp-content-grid-post-meta a:hover {
+    color: #000;
+}
+.pp-content-grid-separator {
+    min-height: 2px;
+    width: 60px;
+    background: #000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.pp-content-grid-post-more-link a {
+    display:flex;
+    justify-content:space-between;
+}
+.pp-content-grid-post-more-link a span {
+    padding-top:5px;
+}
+.post-overlay{
+    overflow:hidden;
+    height:0;
+    background-color:transparent;
+    transition: background-color .8s linear;
+}
+
+.post-main-box:hover .post-front-side{
+    display:none;
+}
+.post-main-box:hover .post-overlay{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    position:absolute;
+    height:100%;
+    padding:30px;
+    background-color:#CEB877;
+    color:#ffffff;
+}
+.post-overlay:hover{
+    background-color:#CEB877;
+}
+.post-main-box:hover .pp-content-grid-post-more-link{
+    padding-top:45px;
+    
+}
+.post-main-box:hover .pp-content-grid-post-more-link a{
+    color:#ffffff;
+}
+.post-main-box:hover .pp-content-grid-post-more-link a span{
+    color:#ffffff;
+    padding-top:5px;
+}
+
+
+    
+
